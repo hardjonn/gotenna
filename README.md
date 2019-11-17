@@ -57,7 +57,7 @@ Password: admin
 ```bash
 $> git clone https://github.com/hardjonn/gotenna.git
 $> cd gotenna
-$> docker compose up -d --build
+$> docker-compose up -d --build
 ```
 
 ## It will clone, build and run the app
