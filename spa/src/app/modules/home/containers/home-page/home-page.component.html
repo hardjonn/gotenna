@@ -1,0 +1,23 @@
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="loading$ | async"
+></mat-progress-bar>
+
+<div class="grid-container">
+  <h2>GoTenna Gallery</h2>
+
+  <app-filter-dims [baseUrl]="'/dims'" [dims]="filterDim$ | async">
+  </app-filter-dims>
+
+  <app-image-cards
+    [imageList]="imageList$ | async"
+    [loading]="loading$ | async"
+    (filterApplyEvent)="filterApply($event)"
+  ></app-image-cards>
+
+  <app-paginator
+    [baseUrl]="'/'"
+    [pageSuffix]="'page'"
+    [paginator]="paginator$ | async"
+  ></app-paginator>
+</div>

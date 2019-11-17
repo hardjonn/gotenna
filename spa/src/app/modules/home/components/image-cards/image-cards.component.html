@@ -1,0 +1,49 @@
+<div class="grid-container">
+  <div fxLayout="row wrap" fxLayoutGap="">
+    <ng-container *ngFor="let image of imageList; let imageIndex = index">
+      <mat-card
+        fxFlex="0 0 calc(25%-16px)"
+        fxFlex.xs="0 0 calc(100%-16px)"
+        fxFlex.sm="0 0 calc(50%-16px)"
+        fxLayout="column"
+        fxLayoutAlign="space-between"
+        class="cards-card"
+      >
+        <div class="card-image-aspect">
+          <img
+            class="card-image"
+            [ngClass]="
+              image.width >= image.height ? 'card-image--h' : 'card-image--v'
+            "
+            [src]="image.url"
+          />
+        </div>
+
+        <div fxLayout="column" fxFlexAlign="start" class="card-actions">
+          <mat-slide-toggle
+            (change)="onGrayScaleChange($event, image)"
+            [checked]="image.filterGrayScale"
+            style="margin: 16px 0;"
+            labelPosition="before"
+            >Grayscale</mat-slide-toggle
+          >
+          <div>
+            <span class="blur-label">Blur Fx</span>
+            <mat-slider
+              min="0"
+              max="10"
+              step="1"
+              [value]="image.filterBlur"
+              (change)="onBlurChange($event, image)"
+              thumbLabel
+            ></mat-slider>
+          </div>
+        </div>
+      </mat-card>
+    </ng-container>
+
+    <h2 *ngIf="!loading && (!imageList || !imageList.length)">
+      Nothing Found
+    </h2>
+  </div>
+</div>

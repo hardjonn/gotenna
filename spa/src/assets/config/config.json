@@ -1,0 +1,12 @@
+{
+  "api": {
+    "host": "http://localhost/api",
+    "version": "v1",
+    "endpoints": {
+      "config": "config",
+      "auth": "auth",
+      "image": "image",
+      "upload": "upload"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<mat-progress-bar
+  mode="indeterminate"
+  *ngIf="uploading$ | async"
+></mat-progress-bar>
+
+<div class="grid-container">
+  <h2>Images List</h2>
+
+  <div>
+    <div>
+      Uploading a new file will replace the current list of images. An empty CSV
+      file will erase data
+    </div>
+
+    <div style="margin-top: 32px;">
+      <input
+        hidden
+        (change)="onFileChange($event.target.files)"
+        #fileInput
+        type="file"
+        id="file"
+      />
+      <button type="button" mat-raised-button (click)="fileInput.click()">
+        Choose File
+      </button>
+      <button
+        (click)="onUpload()"
+        mat-raised-button
+        color="primary"
+        [disabled]="fileToUpload === null"
+      >
+        Upload
+      </button>
+    </div>
+  </div>
+</div>

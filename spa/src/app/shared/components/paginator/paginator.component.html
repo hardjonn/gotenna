@@ -1,0 +1,13 @@
+<div fxLayout="row wrap" class="paginator" *ngIf="paginator">
+  <ng-container *ngFor="let pageItem of paginator.pagesInRange">
+    <a
+      mat-button
+      mat-raised-button
+      class="paginator-button"
+      [routerLink]="linkToPage(pageItem)"
+      [disabled]="pageItem == paginator.currentPage"
+    >
+      {{ pageItem }}
+    </a>
+  </ng-container>
+</div>

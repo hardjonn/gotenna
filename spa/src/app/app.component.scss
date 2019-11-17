@@ -1,0 +1,23 @@
+.sidenav-container {
+  height: 100%;
+  min-height: 100vh;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #1c313a;
+  height: 96px;
+}

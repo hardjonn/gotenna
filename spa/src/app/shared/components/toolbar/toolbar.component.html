@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" class="mat-elevation-z2">
+  <button
+    type="button"
+    aria-label="Toggle Sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset"
+  >
+    <mat-icon aria-label="Side nav toggle">menu</mat-icon>
+  </button>
+  <span>
+    <a routerLink="/" fxHide.xs="true" class="toolbar-home-link">Home</a>
+  </span>
+  <span class="flex-spacer"></span>
+
+  <ng-container *ngIf="!userIsLoggedIn">
+    <a routerLink="login" mat-button>
+      <span>Log In</span>
+    </a>
+  </ng-container>
+
+  <ng-container *ngIf="userIsLoggedIn">
+    <button mat-icon-button [matMenuTriggerFor]="toolbarUserMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #toolbarUserMenu="matMenu">
+      <a routerLink="/admin" mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Admin Panel</span>
+      </a>
+      <button mat-menu-item (click)="onLogout()">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Log Out</span>
+      </button>
+    </mat-menu>
+  </ng-container>
+
+  <ng-container> </ng-container>
+</mat-toolbar>

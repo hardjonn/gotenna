@@ -1,0 +1,44 @@
+.grid-container {
+  margin: 16px;
+}
+
+.cards-card {
+  margin: 8px;
+}
+
+.card-title {
+  font-size: 16px;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.card-image-aspect {
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.card-image {
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.card-image--v {
+  height: 100%;
+  width: auto;
+}
+
+.card-image--h {
+  width: 100%;
+  height: auto;
+}
+
+.blur-label {
+  padding-right: 28px;
+}

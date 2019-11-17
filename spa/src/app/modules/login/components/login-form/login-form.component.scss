@@ -1,0 +1,13 @@
+mat-form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.login-error {
+  padding: 16px;
+  color: red;
+}
+.login-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

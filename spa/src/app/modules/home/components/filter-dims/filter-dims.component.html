@@ -1,0 +1,11 @@
+<mat-chip-list *ngIf="dims" fxLayout="row wrap">
+  <h3>Dimensions:</h3>
+  <mat-chip
+    *ngFor="let dim of dims"
+    [selected]="dim.active"
+    class="dim"
+    [routerLink]="linkToPage(dim)"
+  >
+    {{ dim.key }} <span class="dim__qty">({{ dim.qty }})</span>
+  </mat-chip>
+</mat-chip-list>

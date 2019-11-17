@@ -1,0 +1,9 @@
+.snackbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.snackbar-message--success {
+  color: #66ffa6;
+}

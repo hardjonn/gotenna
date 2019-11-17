@@ -1,0 +1,13 @@
+<div class="snackbar">
+  <div
+    class="snackbar-message"
+    [class.snackbar-message--success]="(data.type$ | async) === notifierType.Ok"
+  >
+    {{ data.message$ | async }}
+  </div>
+  <div class="snackbar-dismiss">
+    <button mat-icon-button color="accent" (click)="onDismissClicked()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>
