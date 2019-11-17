@@ -54,12 +54,18 @@ Password: admin
 
 ## How do you run the app - as simple as this
 
+It will clone, build and run the app
+
 ```bash
 $> git clone https://github.com/hardjonn/gotenna.git
 $> cd gotenna
 $> docker-compose up -d --build
 ```
 
-## It will clone, build and run the app
+## Shutdown
+
+```bash
+$> docker-compose down
+```
 
 ### visit http://localhost:4200 and enjoy the process)
